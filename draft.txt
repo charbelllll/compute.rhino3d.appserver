@@ -1,0 +1,8 @@
+BODY_TECTURE:
+*Following my interest on how computational design and parametrization affect other disciplines outside of architecture, 
+my application would be a configurator that allow to test jewelries and clothes in real time. 
+Necklace, dress and a bracelet that change depending on sliders  which you can manipulate in real time, tested on a body. 
+These three garments are automated (get their mass and multiply it by the price of silver or tissue) in a way to get the price of them and display the total price on the web each time their volume change. 
+Moreover, additional options such as hiding the body or the dress attractor points are also there.
+
+*The plugins I used  are pufferfish and weaverbird.
