@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Body-tecture</title>
+    <link rel="stylesheet" href="style-2.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input {
+            width: 90%;
+        }
+
+        #container {
+            position: relative;
+        }
+
+        #overlay {
+            z-index: 1;
+            width: 100%
+        }
+
+        #loader {
+            border: 5px solid #f3f3f3;
+            /* Light grey */
+            border-top: 5px solid #3d3d3d;
+            /* Grey */
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 2;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loader"></div>
+    <div class = "mainDiv">
+        <div>
+            <a href="#popup" class="button">
+                    <h4>NECKLACE</h4>
+            </a>
+            <div class="popup" id="popup">
+                <div class="popup-inner">
+                    <div class="popupphoto">
+                        <img src="jewlerie.jpg" alt="">
+                    </div>
+                    <a class="closepopup" href="#">X</a>
+                </div>
+            </div>
+            <div><label for="PINCH_RADIUS">Pinch Radius</label></div>
+            <div><input type="range" id="PINCH_RADIUS" name="PINCH_RADIUS" min="0" max="5" value="5" step="1" class="slider"></div>
+            <div><label for="FALLOFF">Falloff</label> </div>
+            <div> <input type="range" id="FALLOFF" name="FALLOFF" min="0.6" max="1" value="0.6" step="0.1" class="slider"></div>
+        </div>
+        <div>
+            <a href="#popup1" class="button">
+                    <h4>DRESS</h4>
+            </a>
+            <div class="popup" id="popup1">
+                <div class="popup-inner">
+                    <div class="popupphoto">
+                        <img src="dresssssssssss.jpg" alt="">
+                    </div>
+                    <a class="closepopup" href="#">X</a>
+                </div>
+            </div>
+            <div><label for="MIN_SCALE">Min scale</label> </div>
+            <div> <input type="range" id="MIN_SCALE" name="MIN_SCALE" min="6" max="10" value="10" step="1" class="slider"></div>
+            <div><label for="MAX_SCALE">Max scale</label></div>
+            <div> <input type="range" id="MAX_SCALE" name="MAX_SCALE" min="45" max="60" value="60" step="1" class="slider"></div>
+        </div>
+        <div>
+            <a href="#popup2" class="button">
+                    <h4>BRACELET</h4>
+            </a>
+            <div class="popup" id="popup2">
+                <div class="popup-inner">
+                    <div class="popupphoto">
+                        <img src="braceleetttt.jpg" alt="">
+                    </div>
+                    <a class="closepopup" href="#">X</a>
+                </div>
+            </div>
+            <div><label for="POINTS">Points</label> </div>
+            <div> <input type="range" id="POINTS" name="POINTS" min="250" max="450" value="350" step="1" class="slider"></div>
+            <div><label for="GROUP">Group</label></div>
+            <div> <input type="range" id="GROUP" name="GROUP" min="4" max="6" value="4" step="1" class="slider"></div>
+        </div>
+        <div>
+            <div id="options">
+                <h4>MORE OPTIONS</h4>
+            </div>
+            <div class= "checkBoxText" id="checkbox-1"><label for="NECKLACEEE">Hide necklace <input class="checkBox" type="checkbox" id="NECKLACEEE"> </label> </div>
+            <div class= "checkBoxText" id="checkbox-2"><label for="DRESSSS">Hide dress <input class="checkBox" type="checkbox" id="DRESSSS"> </label></div>
+            <div class= "checkBoxText" id="checkbox-2"><label for="BRACELET">Hide bracelet <input class="checkBox" type="checkbox" id="BRACELET"> </label></div>
+            <div class= "checkBoxText" id="checkbox-3"><label for="BODY">Hide body <input class="checkBox" type="checkbox" id="BODY"></label>
+            </div><button id="downloadButton" class="button11" onclick="download()">Download</button>
+        </div>
+        <div>
+            <div id="price">
+                <h4>PRICE</h4>
+            </div>
+        </div>
+    </div>
+    <div class = "mainDiv1">
+        <script type="module" src="animate.js"></script>
+    </div>
+
+</body>
+
+</html>
