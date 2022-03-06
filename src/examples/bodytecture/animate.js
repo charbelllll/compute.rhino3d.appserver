@@ -5,7 +5,7 @@ import rhino3dm from "https://cdn.jsdelivr.net/npm/rhino3dm@7.11.1/rhino3dm.modu
 import { RhinoCompute } from "https://cdn.jsdelivr.net/npm/compute-rhino3d@0.13.0-beta/compute.rhino3d.module.js";
 import { Rhino3dmLoader } from "https://cdn.jsdelivr.net/npm/three@0.124.0/examples/jsm/loaders/3DMLoader.js";
 
-const definitionName = "CLOTH_15.gh";
+const definitionName = "CLOTH_18.gh";
 
 // Set up sliders
 const radius_slider = document.getElementById("PINCH_RADIUS");
@@ -172,18 +172,19 @@ async function compute() {
     // go through all objects, check for userstrings and assing colors
 
     object.traverse((child) => {
-      if (child.isLine) {
+      if (child.isMesh) {
 
-        if (child.userData.attributes.geometry.userStringCount > 0) {
+        if (child.userData.attributes.geometry.userStringCount > 0 && child.userData.attributes.userStrings[0][0] == "PRICE") {
+           
+            //console.log(child.userData.attributes.userStrings[0][1])
           
-          //get color from userStrings
-          //const colorData = child.userData.attributes.userStrings[0]
-          //const col = colorData[1];
+          const PRICE = child.userData.attributes.userStrings[0];
+          
 
-          //convert color from userstring to THREE color and assign it
-         // const threeColor = new THREE.Color("rgb(" + col + ")");
-          //const mat = new THREE.LineBasicMaterial({ color: threeColor });
-          //child.material = mat;
+          document.getElementById('PRICE').innerText = ` ${PRICE} ` ;
+
+         console.log();
+
         }
       }
     });
@@ -194,6 +195,8 @@ async function compute() {
 
   });
 }
+
+
 
 function onSliderChange() {
   // show spinner
@@ -227,7 +230,10 @@ function init() {
 
   // add a directional light
   const directionalLight = new THREE.DirectionalLight(0xffffff);
-  directionalLight.intensity = 2;
+  directionalLight.intensity = 3;
+  directionalLight.position.set(400,40,400)
+  directionalLight.innerHeight = 200;
+  directionalLight. innerWidth = 1000;
   scene.add(directionalLight);
 
   const ambientLight = new THREE.AmbientLight();
@@ -246,7 +252,7 @@ function download () {
   let blob = new Blob([ buffer ], { type: "application/octect-stream" })
   let link = document.createElement('a')
   link.href = window.URL.createObjectURL(blob)
-  link.download = 'CLOTH_16.3dm'
+  link.download = 'CLOTH_18.3dm'
   link.click()
 }
 

@@ -8,6 +8,7 @@ body{padding: 50px;}
 }
 .checkBoxText{
   max-width: 200px;
+  
 }
 
 .button11{border:1.5px;border-color: black;border-style: solid;width: fit-content;background-color:white;}
@@ -29,6 +30,7 @@ h4{font-weight: bolder;color: black;border: 1.5px;border-radius: 1px;border-colo
 
 .mainDiv{
   max-width: 475px;
+  position: absolute;
 
 }
 .mainDiv1{

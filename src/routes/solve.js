@@ -157,7 +157,7 @@ function commonSolve (req, res, next){
 
     }).then( (result) => {
       // Note: IIS does not send these headers which was causing an issue with the appserver response
-      /*const timeComputeServerCallComplete = performance.now()
+      const timeComputeServerCallComplete = performance.now()
       let computeTimings = computeServerTiming.get('server-timing')
       let sum = 0
       computeTimings.split(',').forEach(element => {
@@ -179,7 +179,7 @@ function commonSolve (req, res, next){
         //set node-cache
         cache.set(res.locals.cacheKey, result)
       }
-      res.setHeader('Server-Timing', timing)*/
+      res.setHeader('Server-Timing', timing)
       res.send(result)
     }).catch( (error) => { 
       next(error)

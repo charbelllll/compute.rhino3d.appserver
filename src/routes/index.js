@@ -32,7 +32,13 @@ function setComputeParams (){
  * are located in the 'files' directory. These are the names that can be
  * used to call '/:definition_name` for details about a specific definition
  */
-router.get('/',  function(req, res, next) {
+
+ router.get('/',  function(req, res, next) {
+ res.sendFile(__dirname + '/model3.html.html')
+ console.log(__dirname)
+
+ })
+router.get('/list',  function(req, res, next) {
   let definitions = []
   req.app.get('definitions').forEach( def => {
     definitions.push({name: def.name})
